@@ -12,7 +12,7 @@
         <!-- count는 기본 제공 속성 -->
         <br>
         {% if detail.writer == user %}
-        <a href="{% url 'delete' detail.id %}"><button type="button" class="btn btn-dark">삭제</button></a>
+        <a href="{% url 'delete' detail.id %}"><button type ="button" class="btn btn-dark">삭제</button></a>
         <a href="{% url 'update' detail.id %}"><button type ="button" class="btn btn-dark">수정</button></a>
         {% endif %}
         <br><br>
