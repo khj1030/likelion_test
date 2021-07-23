@@ -1,0 +1,55 @@
+{% extends 'basic.html' %}
+{% block content %}
+<form action="{% url 'create_site' %}">
+    <div class="inner-container">
+        
+        <div class="sub-container">
+            <h3 style="color:black">사이트명:</h3>
+            <input type="text" name="title" class="title-input">
+            <br>
+            <br>
+
+            <h3 style="color:black">사이트 주소(URL): </h3>
+            <textarea cols=80 rows=6 name="body"></textarea>
+            <br>
+
+            <h3 style="color:black">사이트 설명: </h3>
+            <textarea cols=80 rows=6 name="bodyTwo"></textarea>
+            <br>
+
+            <input class="btn btn-outline-dark btn-test2" type="submit" value="저장하기">
+        </div>
+    </div>
+</form>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+    
+    .inner-container {
+        font-family: 'Jua', sans-serif;
+        font-size: 20px;
+        padding-top: 30px;
+        color: rgb(54, 124, 189);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        /* {% comment %} grid-template-columns: repeat(2, 1fr); {% endcomment %} */
+    }
+
+    .btn {
+        height: 40px;
+        width: 80px;
+    }
+
+    p{
+        padding:0;
+        margin:0;
+    }
+
+    h3{
+        margin-top: .5rem;
+    }
+
+</style>
+
+{% endblock %}

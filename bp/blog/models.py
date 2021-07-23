@@ -7,6 +7,12 @@ class Blog(models.Model):
     pub_date = models.DateTimeField('data published')
     body = models.TextField()
 
+    bodyTwo = models.TextField(blank=True, null=True)
+    bodyThree = models.TextField(blank=True, null=True)
+    bodyFour = models.TextField(blank=True, null=True)
+    
+    board = models.CharField(max_length=10, blank=True, null=True)
+
     writer= models.ForeignKey(User, on_delete=models.CASCADE, null=True) # on_delete : 삭제할 때 연결도 끊겠다는 의미
 
     likes = models.ManyToManyField(User, through='Like', through_fields=('blog','user'), related_name="likes") # through: ~를 통과한다. through_fields: ~를 통해서 통과하겠다.
@@ -24,3 +30,20 @@ class Comment(models.Model):
 class Like(models.Model): 
     blog = models.ForeignKey(Blog, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+class Site(models.Model):
+    title = models.CharField(max_length = 80)
+    site = models.TextField()
+    explan = models.TextField(blank=True, null=True)
+    writer= models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    def __str__(self):
+        return self.title
+
+    def summary(self):
+        return self.site[:50]
+
+    def summary_title(self):
+        return self.title[:80]
+
+    def summary_explan(self):
+        return self.explan[:120]

@@ -1,0 +1,75 @@
+{% extends 'basic.html' %}
+{% block content %}
+<form action="{% url 'create_inter' %}">
+<div class="inner-container">
+    <div class="sub-container">
+        <h3 style="color:black">제목:</h3>
+            
+            교내 활동 이름/시기 <br>
+        <input type="text" name="title" class="title-input">
+        <br>
+        <br>
+
+        <h3 style="color:black">본문: </h3>
+        <p style="color:black">* 주요 포인트 </p>
+            : 취업이나 다른 활동을 위한 자기소개서 쓸 때 도움이 되는 내용 쓰는 것이 좋음 <br>
+            : 혹시 밑에 양식과 다른 내용이 있으면 개인적으로 추가해도 무방. <br>
+        <br>
+        <p style="color:black">1. 참가하게 된 계기 </p>
+            : 자기소개서 쓸 때 앞에 들어가면 가장 좋은 부분.  <br>
+            : ex) ~것에 대한 나의 실력을 키우고자, ~에 도움이 될 것 같은 경험이여서 <br>
+            : 위의 양식과 같이 짧게라도 적어놓으면 자기소개서 쓸 때 편하므로 사소한 것이라도 적어놓는 것을 추천  <br>
+        <textarea cols=80 rows=6 name="body"></textarea>
+        <br>
+
+        <p style="color:black">2. 교내 활동의 주요 내용</p>
+            : 어떤 교내 활동을 했는지 요약해서 적어놓으면 면접에서 어떤 내용을 했는지 말하기가 쉬움. <br>
+            +) 자연스럽게 나의 느낀점까지 이야기하면서 기업에 대한 신뢰도를 줄 수 있음. <br>
+            : 자기소개서를 쓸 때에도 깔끔하게 정리하기 편함.  <br>
+        <textarea cols=80 rows=6 name="bodyTwo"></textarea>
+        <br>
+
+        <p style="color:black">3. 교내활동에서 나의 역할</p>
+            : 면접과 자기소개서에서 가장 중요한 부분. 꼼꼼히 메모해 놓는 것이 좋음. <br>
+            : 사소한 것이라도 적어놓으면 자기소개서나 면접의 소재가 되기 때문에 많이 적는 것을 추천 <br>
+        <textarea cols=80 rows=6 name="bodyThree"></textarea>
+        <br>
+
+        <p style="color:black"> 4. 교내활동을 통해 느낀점</p>
+            : 나의 역할과 마찬가지로 중요한 부분. <br>
+            : 참가하게 된 계기과 관련시켜 성장한 부분을 적는 것을 추천. <br>
+        <textarea cols=80 rows=6 name="bodyFour"></textarea>
+        <br>
+
+        <input class="btn btn-outline-dark btn-test2" type="submit" value="제출하기">
+    </div>
+  </div>
+
+</form>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+    
+    .inner-container {
+        font-family: 'Jua', sans-serif;
+        font-size: 20px;
+        padding-top: 30px;
+        color: rgb(54, 124, 189);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        /* {% comment %} grid-template-columns: repeat(2, 1fr); {% endcomment %} */
+    }
+
+    .btn {
+        height: 40px;
+        width: 80px;
+    }
+
+    p{
+        padding:0;
+        margin:0;
+    }
+</style>
+
+{% endblock %}

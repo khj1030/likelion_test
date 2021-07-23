@@ -1,0 +1,5 @@
+.inner-container {
+  background-color: bisque;
+  display: flex;
+  flex-direction: row;
+}

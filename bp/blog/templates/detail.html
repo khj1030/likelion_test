@@ -5,10 +5,13 @@
         <h5 class="card-title">{{detail.title}}</h5>
         <h6 class="card-subtitle mb-2 text-muted">작성자: {{detail.writer}}</h6>
         <h6 class="card-subtitle mb-2 text-muted">{{detail.pub_date}}</h6>
-        <h5 class="card-body">{{detail.body}}</h5>
+        <h5 class="card-body">[소제목]<br>{{detail.body}}</h5>
+        <h5 class="card-body">[수업 내용]<br>{{detail.bodyTwo}}</h5>
+        <h5 class="card-body">[질문 거리 & 궁금한 점]<br>{{detail.bodyThree}}</h5>
+        <h5 class="card-body">[요약 정리]<br>{{detail.bodyFour}}</h5>
         <br><br>
         <a href="{% url 'post_like' detail.id %}">{{message}}</a>
-        <br>{{detail.likes.count}}명이 좋아합니다.<br>
+        <br>{{date}} 에 마지막 복습을 하였습니다.<br>
         <!-- count는 기본 제공 속성 -->
         <br>
         {% if detail.writer == user %}
@@ -33,10 +36,23 @@
         <form method="POST" action="{% url 'comment' detail.id %}"> 
         {% csrf_token %}
             <textarea name="body" id="" cols="125" rows="2"></textarea>
-            <input class="btn btn-dark" type="submit" value="댓글달기">
+            <input class="btn btn-dark btn-memo" type="submit" value="메모">
 
         </form>
     </div>
 
 </div>
+
+
+<style>
+    .btn-memo{
+        margin-bottom: 30px;
+    }
+
+    .card{
+        margin-bottom: 20px;
+    }
+
+
+</style>
 {% endblock %}

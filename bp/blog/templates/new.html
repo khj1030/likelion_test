@@ -1,14 +1,74 @@
 {% extends 'basic.html' %}
 {% block content %}
 <form action="{% url 'create' %}">
-    <h4>제목: </h4>
-    <input type="text" name="title">
-    <br>
+    <div class="inner-container">
+        
+        <div class="sub-container">
+            <h3 style="color:black">제목:</h3>
+                
+                전공 이름/교수/주차/차시 <br>
+            <input type="text" name="title" class="title-input">
+            <br>
+            <br>
 
-    <h4>본문: </h4>
-    <textarea cols=40 rows=10 name="body"></textarea>
-    <br>
+            <h3 style="color:black">본문: </h3>
+            <p style="color:black">1. 소제목  </p>
+                : 강의 계획서에 나와 있는 제목을 써도 되고 PPT에 있는 수업 제목을 써도 됨 <br>
+                : 되도록이면 강의를 한 단어/문장으로 압축할 수 있는 말일 수록 보기가 편함 <br>
+            <textarea cols=80 rows=6 name="body"></textarea>
+            <br>
 
-    <input class="btn btn-outline-dark" type="submit" value="제출하기">
+            <p style="color:black">2. 수업 내용 </p>
+                : 교수님이 강의하신 내용을 정리해서 적거나 노트 필기한 그대로 적을 것 <br>
+                : PPT를 기준으로 PPT 제목 -> 본문 내용 -> 교수님의 설명 순으로 정리하면 다시 보기 좋음 <br>
+            <textarea cols=80 rows=6 name="bodyTwo"></textarea>
+            <br>
+
+            <p style="color:black">3. 질문 거리 & 궁금한 점</p>
+                : 이해가 안갔던 부분, 교수님께 추가로 질문하고 싶은 부분을 넣음 <br>
+            <textarea cols=80 rows=6 name="bodyThree"></textarea>
+            <br>
+
+            <p style="color:black">4. 요약 정리</p>
+                : 핵심 키워드를 적어 시험 직전 볼 수 있도록 할 것 <br>
+                : 외워야 하는 중요한 개념들을 적어 놓아도 됨<br>
+                : 전공에 맞춰서 시험 직전에 보면 좋을 것들을 넣어도 됨<br>
+            <textarea cols=80 rows=6 name="bodyFour"></textarea>
+            <br>
+
+            <input class="btn btn-outline-dark btn-test2" type="submit" value="제출하기">
+        </div>
+    </div>
 </form>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+    
+    .inner-container {
+        font-family: 'Jua', sans-serif;
+        font-size: 20px;
+        padding-top: 30px;
+        color: rgb(54, 124, 189);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        /* {% comment %} grid-template-columns: repeat(2, 1fr); {% endcomment %} */
+    }
+
+    .btn {
+        height: 40px;
+        width: 80px;
+    }
+
+    p{
+        padding:0;
+        margin:0;
+    }
+
+    h3{
+        margin-top: .5rem;
+    }
+
+</style>
+
 {% endblock %}
